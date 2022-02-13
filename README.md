@@ -16,6 +16,8 @@ yum install git
 
 ## Create new repository in ECR through Terraform or AWS console
 
+## Create IAM role and With AmazonEC2ContainerRegistryFullAccess policy and attach with the Jenkins EC2 Instance
+
 
 
 
