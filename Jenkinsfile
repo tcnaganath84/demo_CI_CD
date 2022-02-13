@@ -5,7 +5,7 @@ pipeline {
         AWS_DEFAULT_REGION="us-east-1" 
         IMAGE_REPO_NAME="jenkins-docker-demo"
         IMAGE_TAG="latest"
-        REPOSITORY_URI = "449896976179.dkr.ecr.us-east-1.amazonaws.com/jenkins-docker-demo:latest"
+        REPOSITORY_URI = "449896976179.dkr.ecr.us-east-1.amazonaws.com/jenkins-docker-demo"
     }
    
     stages {
