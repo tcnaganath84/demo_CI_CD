@@ -21,7 +21,7 @@ pipeline {
         
         stage('Cloning Git') {
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/mydemo-feature']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '', url: 'https://github.com/tcnaganath84/demo_CI_CD.git']]])     
+                checkout([$class: 'GitSCM', branches: [[name: '*/mydemo-feature']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'GitHub_Credentials', url: 'https://github.com/tcnaganath84/demo_CI_CD.git']]])     
             }
         }
   
