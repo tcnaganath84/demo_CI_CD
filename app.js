@@ -37,6 +37,6 @@ http.createServer(function (req, res) {
 		});
 	}
 	
-}).listen(8080, function () {
-	console.log("SERVER STARTED PORT: 8080");
+}).listen(3000, function () {
+	console.log("SERVER STARTED PORT: 3000");
 });
