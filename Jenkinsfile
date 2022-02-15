@@ -54,7 +54,7 @@ pipeline {
 	                        secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
 	                    withCredentials([kubeconfigFile(credentialsId: 'kubernetes_config', 
 	                        variable: 'KUBECONFIG')]) {
-	                        sh 'kubectl create -f kubernetes-configmap.yml'
+	                        //sh 'kubectl create -f kubernetes-configmap.yml'
 	                    }
 	                }
          }
