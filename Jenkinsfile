@@ -43,5 +43,22 @@ pipeline {
          }
         }
       }
+     
+    // Deploy Image in k8s cluster
+    stage('k8s cluster') {
+     steps{  
+         script {
+               withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', 
+	                        accessKeyVariable: 'AWS_ACCESS_KEY_ID', 
+	                        credentialsId: 'AWS_Credentials', 
+	                        secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
+	                    withCredentials([kubeconfigFile(credentialsId: 'kubernetes_config', 
+	                        variable: 'KUBECONFIG')]) {
+	                        sh 'kubectl create -f kubernetes-configmap.yml'
+	                    }
+	                }
+         }
+        }
+      }
     }
 }
