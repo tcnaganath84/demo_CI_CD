@@ -28,4 +28,7 @@ spec:
     spec:
       containers:
         - name: kubernetes-configmap-reload
-          image: vamsitechtuts/kubernetes-configmap-reload:latest
+          image: 449896976179.dkr.ecr.us-east-1.amazonaws.com/jenkins-docker-demo:latest
+          command:
+          - cat
+          tty: true
