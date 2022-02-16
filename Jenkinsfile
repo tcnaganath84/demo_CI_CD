@@ -7,14 +7,15 @@ pipeline {
         IMAGE_TAG="latest"
         REPOSITORY_URI = "449896976179.dkr.ecr.us-east-1.amazonaws.com/jenkins-docker-demo"
     }
-    stage('Setup') {
+    
+    stages {
+	 stage('Setup') {
 		steps {
 			script {
 				currentBuild.displayName = "#" + env.BUILD_NUMBER + " " + "node-CICD-demo"				
 			}
 		}
 	}
-    stages {
         
          stage('Logging into AWS ECR') {
             steps {
