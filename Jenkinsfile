@@ -6,6 +6,7 @@ pipeline {
         IMAGE_REPO_NAME="jenkins-docker-demo"
         IMAGE_TAG="latest"
         REPOSITORY_URI = "449896976179.dkr.ecr.us-east-1.amazonaws.com/jenkins-docker-demo"
+	DOCKERCONTAINER = "dockerdemo" + env.BUILD_NUMBER
     }
     
     stages {
@@ -61,9 +62,8 @@ pipeline {
 	                        secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
 	                    withCredentials([kubeconfigFile(credentialsId: 'kubernetes_config', 
 	                        variable: 'KUBECONFIG')]) {
-	                        //sh 'kubectl create -f kubernetes-configmap.yml'
-				  dockercontainer = "dockerdemo" + env.BUILD_NUMBER
-				    sh 'docker run -d -p 3000:3000 --name ${dockercontainer}  449896976179.dkr.ecr.us-east-1.amazonaws.com/jenkins-docker-demo:latest'
+	                        //sh 'kubectl create -f kubernetes-configmap.yml'				 
+				    sh "docker run -d -p 3000:3000 --name ${DOCKERCONTAINER} 449896976179.dkr.ecr.us-east-1.amazonaws.com/jenkins-docker-demo:latest"
 				  
 	                    }
 	                }
