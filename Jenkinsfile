@@ -52,8 +52,8 @@ pipeline {
         }
       }
      
-    // Deploy Image in k8s cluster
-    stage('k8s cluster') {
+    // Deploy Container
+    stage('Docker Container Deployment') {
      steps{  
          script {
                withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', 
