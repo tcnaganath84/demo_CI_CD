@@ -6,7 +6,7 @@ pipeline {
         IMAGE_REPO_NAME="jenkins-docker-demo"
         IMAGE_TAG="latest"
         REPOSITORY_URI = "449896976179.dkr.ecr.us-east-1.amazonaws.com/jenkins-docker-demo"
-	DOCKERCONTAINER = "dockerdemo" + env.BUILD_NUMBER
+	DOCKERCONTAINER = "dockerdemo_env.BUILD_NUMBER"
     }
     
     stages {
