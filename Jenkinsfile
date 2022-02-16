@@ -55,6 +55,8 @@ pipeline {
 	                    withCredentials([kubeconfigFile(credentialsId: 'kubernetes_config', 
 	                        variable: 'KUBECONFIG')]) {
 	                        //sh 'kubectl create -f kubernetes-configmap.yml'
+				  sh 'docker run -d -p 3000:3000 --name dockerdemo 449896976179.dkr.ecr.us-east-1.amazonaws.com/jenkins-docker-demo:latest'
+				  
 	                    }
 	                }
          }
